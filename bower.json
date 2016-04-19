@@ -4,7 +4,7 @@
   "authors": [
      "Bass Jobsen <bass@w3masters.nl> (http://bassjobsen.weblogs.fm)"
   ],
-  "description": "An empty new Bootstap project. Powered by Panini, Sass and Gulp.",
+  "description": "An empty new Bootstrap project. Powered by Panini, Sass and Gulp.",
   "main": "_site/index.html",
   "license": "MIT",
   "homepage": "https://github.com/bassjobsen/empty-bootstrap-project-gulp/",

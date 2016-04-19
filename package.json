@@ -1,7 +1,7 @@
 {
   "name": "empty-bootstrap-project-gulp",
   "version": "0.0.1",
-  "description": "An empty new Bootstap project. Powered by Panini, Sass and Gulp.",
+  "description": "An empty new Bootstrap project. Powered by Panini, Sass and Gulp.",
   "main": "Gruntfile.js",
   "devDependencies": {
     "autoprefixer": "^6.3.6",
