@@ -1,4 +1,4 @@
-# Empty Boostrap 4 Project
+# Empty Bootstrap 4 Project
 
 Empty [Bootstrap 4](http://v4-alpha.getbootstrap.com/) Project. It includes a Sass compiler and a set of Panini HTML templates for you. [Panini](https://github.com/zurb/panini) is a super simple flat file generator for use with Gulp. It compiles a series of HTML pages using a common layout. These pages can also include HTML partials, external Handlebars helpers, or external data as JSON or YAML.
 

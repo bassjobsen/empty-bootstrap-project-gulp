@@ -20,12 +20,18 @@ gulp.task('server', ['build'], function(){
 // Watch files for changes
 gulp.task('watch', function() {
   gulp.watch('scss/**/*', ['compile-sass', browser.reload]);
-  gulp.watch('html/**/*.html', ['compile-html', browser.reload]);
+  gulp.watch('html/pages/**/*', ['compile-html']);
+  gulp.watch(['html/{layouts,includes,helpers,data}/**/*'], ['compile-html:reset','compile-html']);
 });
 
 // Erases the dist folder
 gulp.task('clean', function() {
   rimraf('_site');
+});
+
+// Copy assets
+gulp.task('copy', function() {
+  gulp.src(['assets/**/*']).pipe(gulp.dest('_site'));
 });
 
 var sassOptions = {
@@ -87,7 +93,13 @@ gulp.task('compile-html', function() {
       helpers: 'html/helpers/',
       data: 'html/data/'
     }))
-    .pipe(gulp.dest('_site'));
+    .pipe(gulp.dest('_site'))
+    .on('finish', browser.reload);
+});
+
+gulp.task('compile-html:reset', function(done) {
+  panini.refresh();
+  done();
 });
 
 gulp.task('compile-js', function() {
@@ -97,5 +109,5 @@ gulp.task('compile-js', function() {
 });
 
 
-gulp.task('build', ['clean','compile-js','compile-sass','compile-html']);
+gulp.task('build', ['clean','copy','compile-js','compile-sass','compile-html']);
 gulp.task('default', ['server', 'watch']);
