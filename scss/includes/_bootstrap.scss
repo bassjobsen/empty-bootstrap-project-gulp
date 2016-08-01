@@ -1,10 +1,12 @@
 /*!
- * Bootstrap v4.0.0-alpha.2 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
+ * Bootstrap v4.0.0-alpha.3 (http://getbootstrap.com)
+ * Copyright 2011-2016 The Bootstrap Authors
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
 // Core variables and mixins
+@import "bootstrap/scss/custom";
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/mixins";
 
@@ -33,8 +35,7 @@
 @import "bootstrap/scss/card";
 @import "bootstrap/scss/breadcrumb";
 @import "bootstrap/scss/pagination";
-@import "bootstrap/scss/pager";
-@import "bootstrap/scss/labels";
+@import "bootstrap/scss/tags";
 @import "bootstrap/scss/jumbotron";
 @import "bootstrap/scss/alert";
 @import "bootstrap/scss/progress";
@@ -51,6 +52,3 @@
 
 // Utility classes
 @import "bootstrap/scss/utilities";
-@import "bootstrap/scss/utilities-background";
-@import "bootstrap/scss/utilities-spacing";
-@import "bootstrap/scss/utilities-responsive";
