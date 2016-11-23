@@ -1,23 +1,26 @@
-var gulp = require('gulp');
-var clean = require('gulp-clean');
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
-var postcss = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
-var mq4HoverShim = require('mq4-hover-shim');
-var rimraf = require('rimraf').sync;
-var browser = require('browser-sync');
-var panini = require('panini');
-var concat = require('gulp-concat');
-var port = process.env.SERVER_PORT || 8080;
-var bowerpath = process.env.BOWER_PATH || 'bower_components/';
+'use strict';
 
-// Starts a BrowerSync instance
+const autoprefixer = require('autoprefixer');
+const browser = require('browser-sync');
+const clean = require('gulp-clean');
+const concat = require('gulp-concat');
+const gulp = require('gulp');
+const mq4HoverShim = require('mq4-hover-shim');
+const panini = require('panini');
+const postcss = require('gulp-postcss');
+const rimraf = require('rimraf').sync;
+const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
+
+var port = process.env.SERVER_PORT || 8080;
+var nodepath = process.env.NODE_PATH || 'node_modules/';
+
+// Starts BrowerSync
 gulp.task('server', ['build'], function(){
   browser.init({server: './_site', port: port});
 });
 
-// Watch files for changes
+// Watches files for changes
 gulp.task('watch', function() {
   gulp.watch('scss/**/*', ['compile-sass', browser.reload]);
   gulp.watch('html/pages/**/*', ['compile-html']);
@@ -29,7 +32,7 @@ gulp.task('clean', function() {
   rimraf('_site');
 });
 
-// Copy assets
+// Copies assets
 gulp.task('copy', function() {
   gulp.src(['assets/**/*']).pipe(gulp.dest('_site'));
 });
@@ -37,7 +40,7 @@ gulp.task('copy', function() {
 var sassOptions = {
   errLogToConsole: true,
   outputStyle: 'expanded',
-  includePaths: bowerpath
+  includePaths: nodepath
 };
 
 gulp.task('compile-sass', function () {
@@ -103,7 +106,7 @@ gulp.task('compile-html:reset', function(done) {
 });
 
 gulp.task('compile-js', function() {
-  return gulp.src([bowerpath+ 'jquery/dist/jquery.min.js', bowerpath+ 'tether/dist/js/tether.min.js', bowerpath+ 'bootstrap/dist/js/bootstrap.min.js'])
+  return gulp.src([nodepath+ 'jquery/dist/jquery.min.js', nodepath+ 'tether/dist/js/tether.min.js', nodepath+ 'bootstrap/dist/js/bootstrap.min.js'])
     .pipe(concat('app.js'))
     .pipe(gulp.dest('./_site/js/'));
 });

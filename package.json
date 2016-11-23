@@ -1,11 +1,12 @@
 {
-  "name": "empty-bootstrap-project-gulp",
-  "version": "0.0.1",
-  "description": "An empty new Bootstrap project. Powered by Panini, Sass and Gulp.",
+  "name": "bootstrap4-prototyping-glue",
+  "version": "0.0.2",
+  "description": "Rapid prototyping with Bootstrap 4 using Panini, Sass, and Gulp.",
   "main": "Gruntfile.js",
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "browser-sync": "^2.12.3",
+    "bootstrap": "^4.0.0-alpha.5",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.0",
@@ -14,7 +15,8 @@
     "gulp-sourcemaps": "^1.6.0",
     "mq4-hover-shim": "^0.3.0",
     "panini": "^1.3.0",
-    "rimraf": "^2.5.2"
+    "rimraf": "^2.5.2",
+    "tether": "^1.1.2"
   },
   "engines": {
     "node": ">=0.10.1"
@@ -25,13 +27,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bassjobsen/empty-bootstrap-project-gulp.git"
+    "url": "https://github.com/gluethegiant/bootstrap4-prototyping-glue.git"
   },
   "bugs": {
-    "url": "https://github.com/bassjobsen/empty-bootstrap-project-gulp/issues",
-    "email": "bass@w3masters.nl"
+    "url": "https://github.com/gluethegiant/bootstrap4-prototyping-glue/issues",
+    "email": "prmerchant@gmail.com"
   },
-  "author": "Bass Jobsen <bass@w3masters.nl> (http://bassjobsen.weblogs.fm)",
+  "author": "Paul Merchant <prmerchant@gmail.com> (http://paulmerchant.com)",
   "license": "MIT",
   "private": true
 }
